@@ -1,0 +1,2 @@
+*/5 * * * * root echo "Hello from cron" >> /var/log/cron.log 2>&1
+*/5 * * * * root /home/wissal/Desktop/appTest/quotes.py >> /var/log/cron.log 2>&1

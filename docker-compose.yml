@@ -1,0 +1,21 @@
+version: '3.9.1'
+
+services:
+  mon_app:
+    image: wissaldats/python-quotes:v0.0.1
+    volumes:
+      - /home/wissal/Desktop/appTest:/data
+    # Définissez ici les ports si votre application doit être accessible depuis l'extérieur.
+    # ports:
+    #   - "80:80"
+    
+  cronjob:
+    image: alpine:latest
+    volumes:
+      - ./mycronfile:/etc/crontabs
+      - /home/wissal/Desktop/appTest:/data
+    command: /usr/sbin/crond -f -l 8
+
+volumes:
+  app-data:
+
